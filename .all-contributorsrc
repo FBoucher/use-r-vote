@@ -1,0 +1,32 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "contributorsPerLine": 7,
+  "skipCi": "true",
+  "projectName": "Outspoken",
+  "projectOwner": "FBoucher",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "contributors": [
+    {
+      "login": "fboucher",
+      "name": "Frank Boucher",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2404846?v=4",
+      "profile": "http://cloud5mins.com",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "devsgarage",
+      "name": "Developers Garage",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46392923?s=460&v=4",
+      "profile": "https://github.com/devsgarage",
+      "contributions": [
+        "ideas"
+      ]
+    }
+  ]
+}
