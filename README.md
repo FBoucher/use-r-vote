@@ -1,5 +1,7 @@
 # User-R-Vote
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+
 <img src="https://github.com/FBoucher/use-r-vote/raw/master/medias/user-r-vote_800.png" alt="Use-R-Vote cover" width="600"/>
 
 An online request/idea voting platform manage by the community. You pitch your idea the community vote on it. The most popular get picked.
@@ -18,6 +20,7 @@ Check out our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contributing](CONTRIBUT
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
