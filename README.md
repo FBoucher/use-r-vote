@@ -23,7 +23,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="http://cloud5mins.com"><img src="https://avatars3.githubusercontent.com/u/2404846?v=4" width="100px;" alt="Frank Boucher"/><br /><sub><b>Frank Boucher</b></sub></a><br /><a href="#ideas-fboucher" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="http://cloud5mins.com"><img src="https://avatars3.githubusercontent.com/u/2404846?v=4" width="100px;" alt="Frank Boucher"/><br /><sub><b>Frank Boucher</b></sub></a><br /><a href="#ideas-fboucher" title="Ideas, Planning, & Feedback">🤔</a> <a href="#video-fboucher" title="Videos">📹</a></td>
     <td align="center"><a href="https://github.com/devsgarage"><img src="https://avatars3.githubusercontent.com/u/46392923?s=460&v=4" width="100px;" alt="Developers Garage"/><br /><sub><b>Developers Garage</b></sub></a><br /><a href="#ideas-devsgarage" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>

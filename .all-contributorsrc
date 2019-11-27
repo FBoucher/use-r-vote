@@ -5,7 +5,7 @@
   "imageSize": 100,
   "contributorsPerLine": 7,
   "skipCi": "true",
-  "projectName": "Outspoken",
+  "projectName": "use-r-vote",
   "projectOwner": "FBoucher",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -16,7 +16,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/2404846?v=4",
       "profile": "http://cloud5mins.com",
       "contributions": [
-        "ideas"
+        "ideas",
+        "video"
       ]
     },
     {
