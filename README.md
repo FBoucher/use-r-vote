@@ -14,7 +14,7 @@ An online request/idea voting platform manage by the community. You pitch your i
 
 If you find a bug or would like to add a feature, check out those resources:
 
-- To see the current work in progress: [GLO boards](https://app.gitkraken.com/glo/board/Xbnuzn6ElQAPA-kC)
+- To see the current work in progress: [GLO boards](https://app.gitkraken.com/glo/board/Xd6MnvAbPwAPFizi)
 
 Check out our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contributing](CONTRIBUTING.md) docs. This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.  Contributions of any kind welcome!
 
