@@ -39,6 +39,13 @@ namespace use_r_vote
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
+
+            services.AddAuthentication().AddTwitter(twitterOptions =>
+            {
+                twitterOptions.ConsumerKey = Configuration["WEBSITE_AUTH_TWITTER_CONSUMER_KEY"];
+                twitterOptions.ConsumerSecret = Configuration["WEBSITE_AUTH_TWITTER_CONSUMER_SECRET"];
+            });
+
             services.AddSingleton<WeatherForecastService>();
         }
 
