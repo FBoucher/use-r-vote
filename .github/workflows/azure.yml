@@ -1,8 +1,8 @@
 name: CI-Dev
 
 env:
-  AZURE_WEBAPP_NAME: user-r-vote   # set this to your application's name
-  AZURE_GROUP_NAME: use-r-vote
+  AZURE_WEBAPP_NAME: userrvote2019   # set this to your application's name
+  AZURE_GROUP_NAME: uservotegr
 
 on: [push]
 
