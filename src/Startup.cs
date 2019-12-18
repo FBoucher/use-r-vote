@@ -13,10 +13,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using use_r_vote.Areas.Identity;
-using use_r_vote.Data;
+using Use_R_Vote.Areas.Identity;
+using Use_R_Vote.Data;
 
-namespace use_r_vote
+namespace Use_R_Vote
 {
     public class Startup
     {
@@ -34,7 +34,7 @@ namespace use_r_vote
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
             services.AddServerSideBlazor();
@@ -45,7 +45,7 @@ namespace use_r_vote
                 twitterOptions.ConsumerKey = Configuration["WEBSITE_AUTH_TWITTER_CONSUMER_KEY"];
                 twitterOptions.ConsumerSecret = Configuration["WEBSITE_AUTH_TWITTER_CONSUMER_SECRET"];
             });
-
+            
             services.AddSingleton<WeatherForecastService>();
         }
 
