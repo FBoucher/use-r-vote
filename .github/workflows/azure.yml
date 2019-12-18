@@ -1,4 +1,4 @@
-name: CI
+name: CI-Dev
 
 env:
   AZURE_WEBAPP_NAME: user-r-vote   # set this to your application's name

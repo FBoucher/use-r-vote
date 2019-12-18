@@ -41,14 +41,14 @@
             }
         },
         {
-            "name": "authsettings",
             "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('myWebAppName'), '/web')]",
             "apiVersion": "2019-08-01",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/sites', parameters('myWebAppName'))]"
             ],
-             "properties": {
+            "properties": {
                 "siteAuthSettings": {
                     "enabled": true,
                     "unauthenticatedClientAction": null,
@@ -66,7 +66,7 @@
                     "twitterConsumerSecret": "[parameters('twitterApiSecret')]"
 
                 }
-             }
+            }
         },
         {
             "name": "uservoteplan",
