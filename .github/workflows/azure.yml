@@ -1,8 +1,8 @@
 name: CI-Dev
 
 env:
-  AZURE_WEBAPP_NAME: userrvote2019   # set this to your application's name
-  AZURE_GROUP_NAME: uservotegr
+  AZURE_WEBAPP_NAME: use-r-vote   # set this to your application's name
+  AZURE_GROUP_NAME: use-r-vote
 
 on: [push]
 
@@ -33,7 +33,7 @@ jobs:
 
     - run: |
         az group create -n ${{ env.AZURE_GROUP_NAME }} -l eastus 
-        az group deployment create -n ghaction -g ${{ env.AZURE_GROUP_NAME }} --template-file deployment/azuredepoy.json --parameters myWebAppName=${{ env.AZURE_WEBAPP_NAME }}, twitterApiKey=${{ secrets.TWITTER_API_KEY }}, twitterApiSecret=${{ secrets.TWITTER_API_SECRET }}
+        az group deployment create -n ghaction -g ${{ env.AZURE_GROUP_NAME }} --template-file deployment/azuredepoy.json --parameters myWebAppName=${{ env.AZURE_WEBAPP_NAME }} twitterApiKey=${{ secrets.TWITTER_API_KEY }} twitterApiSecret=${{ secrets.TWITTER_API_SECRET }} 
 
 
     # deploy web app using Azure credentials

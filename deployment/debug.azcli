@@ -1,0 +1,11 @@
+
+
+
+az group create -n use-r-vote -l eastus 
+
+
+az group deployment validate -g use-r-vote --template-file deployment/azuredepoy.json --parameters myWebAppName="use-r-vote" twitterApiKey="123" twitterApiSecret="123"
+
+
+
+

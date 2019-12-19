@@ -21,32 +21,35 @@
             }
         }
     },
-    "variables": {},
+    "variables": {
+        "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
+        "webAppName": "[toLower(concat(parameters('myWebAppName'), variables('suffix')))]"
+    },
     "resources": [
         {
-            "name": "[parameters('myWebAppName')]",
+            "name": "[variables('webAppName')]",
             "type": "Microsoft.Web/sites",
             "apiVersion": "2016-08-01",
             "location": "[resourceGroup().location]",
             "tags": {
                 "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/uservoteplan')]": "Resource",
-                "displayName": "[parameters('myWebAppName')]"
+                "displayName": "[variables('webAppName')]"
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', 'uservoteplan')]"
             ],
             "properties": {
-                "name": "[parameters('myWebAppName')]",
+                "name": "[variables('webAppName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'uservoteplan')]"
             }
         },
         {
             "type": "Microsoft.Web/sites/config",
-            "name": "[concat(parameters('myWebAppName'), '/web')]",
+            "name": "[concat(variables('webAppName'), '/web')]",
             "apiVersion": "2019-08-01",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('myWebAppName'))]"
+                "[resourceId('Microsoft.Web/sites', variables('webAppName'))]"
             ],
             "properties": {
                 "siteAuthSettings": {
@@ -85,6 +88,15 @@
             }
         }
     ],
-    "outputs": {},
+    "outputs": {
+        "variable-webAppName": {
+           "type": "string",
+           "value": "[variables('webAppName')]"
+        },
+        "variable-sufffix": {
+           "type": "string",
+           "value": "[variables('suffix')]"
+        }
+    },
     "functions": []
 }
