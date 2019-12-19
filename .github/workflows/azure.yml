@@ -27,10 +27,12 @@ jobs:
       run: |
         dotnet publish ./src -c Release -o myapp 
 
-    - uses: azure/login@v1
+    - name: Az login
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      name: Create Azure Resources
     - run: |
         az group create -n ${{ env.AZURE_GROUP_NAME }} -l eastus 
         az group deployment create -n ghaction -g ${{ env.AZURE_GROUP_NAME }} --template-file deployment/azuredepoy.json --parameters myWebAppName=${{ env.AZURE_WEBAPP_NAME }} twitterApiKey=${{ secrets.TWITTER_API_KEY }} twitterApiSecret=${{ secrets.TWITTER_API_SECRET }} 
@@ -44,6 +46,6 @@ jobs:
         package: './myapp' 
 
     # Azure logout 
-    - name: logout
+    - name: Az logout
       run: |
         az logout

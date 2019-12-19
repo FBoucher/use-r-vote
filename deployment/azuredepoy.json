@@ -41,35 +41,43 @@
             "properties": {
                 "name": "[variables('webAppName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'uservoteplan')]"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/config",
-            "name": "[concat(variables('webAppName'), '/web')]",
-            "apiVersion": "2019-08-01",
-            "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', variables('webAppName'))]"
-            ],
-            "properties": {
-                "siteAuthSettings": {
-                    "enabled": true,
-                    "unauthenticatedClientAction": null,
-                    "tokenStoreEnabled": null,
-                    "allowedExternalRedirectUrls": null,
-                    "defaultProvider": null,
-                    "clientId": null,
-                    "clientSecret": null,
-                    "clientSecretCertificateThumbprint": null,
-                    "issuer": null,
-                    "allowedAudiences": null,
-                    "additionalLoginParams": null,
-                    "isAadAutoProvisioned": false,
-                    "twitterConsumerKey": "[parameters('twitterApiKey')]",
-                    "twitterConsumerSecret": "[parameters('twitterApiSecret')]"
-
+            },
+            "resources":[
+                {
+                    "type":"config",
+                    "name":"authsettings",
+                    "apiVersion": "2015-08-01",
+                    "dependsOn": [ "[resourceId('Microsoft.Web/sites/', variables('webAppName'))]" ],
+                    "tags": {
+                        "displayName": "websiteAuthSettings"
+                    },
+                    "properties": {
+                        "enabled": true,
+                        "httpApiPrefixPath": null,
+                        "unauthenticatedClientAction": 1,
+                        "tokenStoreEnabled": true,
+                        "allowedExternalRedirectUrls": null,
+                        "defaultProvider": 4,
+                        "clientId": null,
+                        "clientSecret": null,
+                        "issuer": null,
+                        "allowedAudiences": null,
+                        "additionalLoginParams": null,
+                        "isAadAutoProvisioned": false,
+                        "googleClientId": null,
+                        "googleClientSecret": null,
+                        "googleOAuthScopes": null,
+                        "facebookAppId": null,
+                        "facebookAppSecret": null,
+                        "facebookOAuthScopes": null,
+                        "twitterConsumerKey": "[parameters('twitterApiKey')]",
+                        "twitterConsumerSecret": "[parameters('twitterApiSecret')]",
+                        "microsoftAccountClientId": null,
+                        "microsoftAccountClientSecret": null,
+                        "microsoftAccountOAuthScopes": null
+                    }
                 }
-            }
+            ]
         },
         {
             "name": "uservoteplan",
