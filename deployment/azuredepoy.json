@@ -23,7 +23,8 @@
     },
     "variables": {
         "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
-        "webAppName": "[toLower(concat(parameters('myWebAppName'), variables('suffix')))]"
+        // "webAppName": "[toLower(concat(parameters('myWebAppName'), variables('suffix')))]"
+        "webAppName": "[toLower(parameters('myWebAppName'))]"
     },
     "resources": [
         {
