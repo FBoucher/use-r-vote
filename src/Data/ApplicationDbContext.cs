@@ -12,5 +12,6 @@ namespace Use_R_Vote.Data
             : base(options)
         {
         }
+        public DbSet<UserIdea> UserIdeas { get; set; } 
     }
 }
